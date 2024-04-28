@@ -25,12 +25,6 @@ class SkemaPaguSdDetailAddRequest extends FormRequest
 		
         return [
             
-				"no" => "nullable|string",
-				"namasekolah" => "nullable|string",
-				"nama" => "nullable|string",
-				"jabatan" => "nullable|string",
-				"keterangan" => "nullable|string",
-				"sekolah_id" => "nullable|numeric",
             
         ];
     }

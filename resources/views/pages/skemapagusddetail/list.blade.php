@@ -32,12 +32,10 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                     </div>
                 </div>
                 <div class="col-auto  " >
-                    <?php if($can_add){ ?>
-                    <a  class="btn btn-primary btn-block" href="<?php print_link("skemapagusddetail/add", true) ?>" >
+                    <a  class="btn " href="<?php print_link("skemapagusddetail/add") ?>" >
                     <i class="fa fa-plus"></i>                              
                     {{ __('addNewSkemaPaguSdDetail') }} 
                 </a>
-                <?php } ?>
             </div>
             <div class="col-md-3  " >
                 <!-- Page drop down search component -->
@@ -70,17 +68,14 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                             <table class="table table-hover table-striped table-sm text-left">
                                 <thead class="table-header ">
                                     <tr>
-                                        <?php if($can_delete){ ?>
-                                        <th class="td-checkbox">
-                                        <label class="form-check-label">
-                                        <input class="toggle-check-all form-check-input" type="checkbox" />
-                                        </label>
+                                        <th class="td-id <?php echo (get_value('orderby') == 'id' ? 'sortedby' : null); ?>" >
+                                        <?php Html :: get_field_order_link('id', __('id'), ''); ?>
                                         </th>
-                                        <?php } ?>
-                                        <th class="td-id" > {{ __('id') }}</th>
                                         <th class="td-no" > {{ __('no') }}</th>
                                         <th class="td-namasekolah" > {{ __('namasekolah') }}</th>
-                                        <th class="td-nama" > {{ __('nama') }}</th>
+                                        <th class="td-nama <?php echo (get_value('orderby') == 'nama' ? 'sortedby' : null); ?>" >
+                                        <?php Html :: get_field_order_link('nama', __('nama'), ''); ?>
+                                        </th>
                                         <th class="td-jabatan" > {{ __('jabatan') }}</th>
                                         <th class="td-keterangan" > {{ __('keterangan') }}</th>
                                         <th class="td-sekolah_id" > {{ __('sekolahId') }}</th>
@@ -99,13 +94,6 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         $counter++;
                                     ?>
                                     <tr>
-                                        <?php if($can_delete){ ?>
-                                        <td class=" td-checkbox">
-                                            <label class="form-check-label">
-                                            <input class="optioncheck form-check-input" name="optioncheck[]" value="<?php echo $data['id'] ?>" type="checkbox" />
-                                            </label>
-                                        </td>
-                                        <?php } ?>
                                         <!--PageComponentStart-->
                                         <td class="td-id">
                                             <a href="<?php print_link("/skemapagusddetail/view/$data[id]") ?>"><?php echo $data['id']; ?></a>
@@ -140,77 +128,75 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                     <i class="fa fa-eye"></i> {{ __('view') }}
                                                 </a>
                                                 <?php } ?>
-                                                <?php if($can_edit){ ?>
-                                                <a class="dropdown-item "   href="<?php print_link("skemapagusddetail/edit/$rec_id"); ?>" >
-                                                <i class="fa fa-edit"></i> {{ __('edit') }}
-                                            </a>
-                                            <?php } ?>
-                                            <?php if($can_delete){ ?>
-                                            <a class="dropdown-item record-delete-btn" data-prompt-msg="{{ __('promptDeleteRecord') }}" data-display-style="modal" href="<?php print_link("skemapagusddetail/delete/$rec_id"); ?>" >
-                                            <i class="fa fa-times"></i> {{ __('delete') }}
-                                        </a>
-                                        <?php } ?>
-                                    </ul>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php 
+                                    }
+                                ?>
+                                <!--endrecord-->
+                            </tbody>
+                            <tbody class="search-data"></tbody>
+                            <?php
+                                }
+                                else{
+                            ?>
+                            <tbody class="page-data">
+                                <tr>
+                                    <td class="bg-light text-center text-muted animated bounce p-3" colspan="1000">
+                                        <i class="fa fa-ban"></i> {{ __('noRecordFound') }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <?php
+                                }
+                            ?>
+                        </table>
+                    </div>
+                    <?php
+                        if($show_footer){
+                    ?>
+                    <div class=" mt-3">
+                        <div class="row align-items-center justify-content-between">    
+                            <div class="col-md-auto d-flex">    
+                                <?php if($can_delete){ ?>
+                                <button data-prompt-msg="{{ __('promptDeleteRecords') }}" data-display-style="modal" data-url="<?php print_link("skemapagusddetail/delete/{sel_ids}"); ?>" class="btn btn-sm btn-danger btn-delete-selected d-none">
+                                <i class="fa fa-times"></i> {{ __('deleteSelected') }}
+                                </button>
+                                <?php } ?>
+                                <div class="dropup export-btn-holder">
+                                    <button  class="btn  btn-sm btn-outline-primary dropdown-toggle" title="Export" type="button" data-bs-toggle="dropdown">
+                                    <i class="fa fa-save"></i> 
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <?php Html :: export_menus(['pdf', 'print', 'excel', 'csv']); ?>
+                                    </div>
                                 </div>
-                            </td>
-                        </tr>
-                        <?php 
-                            }
-                        ?>
-                        <!--endrecord-->
-                    </tbody>
-                    <tbody class="search-data"></tbody>
-                    <?php
-                        }
-                        else{
-                    ?>
-                    <tbody class="page-data">
-                        <tr>
-                            <td class="bg-light text-center text-muted animated bounce p-3" colspan="1000">
-                                <i class="fa fa-ban"></i> {{ __('noRecordFound') }}
-                            </td>
-                        </tr>
-                    </tbody>
+                            </div>
+                            <div class="col">   
+                                <?php
+                                    if($show_pagination == true){
+                                    $pager = new Pagination($total_records, $record_count);
+                                    $pager->show_page_count = false;
+                                    $pager->show_record_count = true;
+                                    $pager->show_page_limit =false;
+                                    $pager->limit = $limit;
+                                    $pager->show_page_number_list = true;
+                                    $pager->pager_link_range=5;
+                                    $pager->render();
+                                    }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
                     <?php
                         }
                     ?>
-                </table>
-            </div>
-            <?php
-                if($show_footer){
-            ?>
-            <div class=" mt-3">
-                <div class="row align-items-center justify-content-between">    
-                    <div class="col-md-auto d-flex">    
-                        <?php if($can_delete){ ?>
-                        <button data-prompt-msg="{{ __('promptDeleteRecords') }}" data-display-style="modal" data-url="<?php print_link("skemapagusddetail/delete/{sel_ids}"); ?>" class="btn btn-sm btn-danger btn-delete-selected d-none">
-                        <i class="fa fa-times"></i> {{ __('deleteSelected') }}
-                        </button>
-                        <?php } ?>
-                    </div>
-                    <div class="col">   
-                        <?php
-                            if($show_pagination == true){
-                            $pager = new Pagination($total_records, $record_count);
-                            $pager->show_page_count = false;
-                            $pager->show_record_count = true;
-                            $pager->show_page_limit =false;
-                            $pager->limit = $limit;
-                            $pager->show_page_number_list = true;
-                            $pager->pager_link_range=5;
-                            $pager->render();
-                            }
-                        ?>
-                    </div>
                 </div>
             </div>
-            <?php
-                }
-            ?>
         </div>
     </div>
-</div>
-</div>
 </div>
 </div>
 </section>

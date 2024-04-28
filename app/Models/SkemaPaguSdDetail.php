@@ -42,14 +42,13 @@ class SkemaPaguSdDetail extends Model
 		//search table record 
 		$search_condition = '(
 				id LIKE ?  OR 
-				no LIKE ?  OR 
 				namasekolah LIKE ?  OR 
 				nama LIKE ?  OR 
 				jabatan LIKE ?  OR 
 				keterangan LIKE ? 
 		)';
 		$search_params = [
-			"%$text%","%$text%","%$text%","%$text%","%$text%","%$text%"
+			"%$text%","%$text%","%$text%","%$text%","%$text%"
 		];
 		//setting search conditions
 		$query->whereRaw($search_condition, $search_params);
@@ -116,24 +115,6 @@ class SkemaPaguSdDetail extends Model
      * @return array
      */
 	public static function exportViewFields(){
-		return [ 
-			"id",
-			"no",
-			"namasekolah",
-			"nama",
-			"jabatan",
-			"keterangan",
-			"sekolah_id" 
-		];
-	}
-	
-
-	/**
-     * return edit page fields of the model.
-     * 
-     * @return array
-     */
-	public static function editFields(){
 		return [ 
 			"id",
 			"no",
