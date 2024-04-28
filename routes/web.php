@@ -188,12 +188,8 @@ Route::middleware(['auth', 'rbac'])->group(function () {
 /* routes for SkemaPaguSd Controller */
 	Route::get('skemapagusd', 'SkemaPaguSdController@index')->name('skemapagusd.index');
 	Route::get('skemapagusd/index/{filter?}/{filtervalue?}', 'SkemaPaguSdController@index')->name('skemapagusd.index');	
-	Route::get('skemapagusd/view/{rec_id}', 'SkemaPaguSdController@view')->name('skemapagusd.view');	
-	Route::get('skemapagusd/add', 'SkemaPaguSdController@add')->name('skemapagusd.add');
-	Route::post('skemapagusd/add', 'SkemaPaguSdController@store')->name('skemapagusd.store');
-		
-	Route::any('skemapagusd/edit/{rec_id}', 'SkemaPaguSdController@edit')->name('skemapagusd.edit');	
-	Route::get('skemapagusd/delete/{rec_id}', 'SkemaPaguSdController@delete');
+	Route::get('skemapagusd/view/{rec_id}', 'SkemaPaguSdController@view')->name('skemapagusd.view');
+	Route::get('skemapagusd/masterdetail/{rec_id}', 'SkemaPaguSdController@masterDetail')->name('skemapagusd.masterdetail')->withoutMiddleware(['rbac']);
 
 /* routes for SkemaPaguSdDetail Controller */
 	Route::get('skemapagusddetail', 'SkemaPaguSdDetailController@index')->name('skemapagusddetail.index');

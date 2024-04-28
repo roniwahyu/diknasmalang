@@ -48,209 +48,211 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                             $rec_id = ($data['id'] ? urlencode($data['id']) : null);
                         ?>
                         <div id="page-main-content" class=" px-3 mb-3">
-                            <div class="page-data">
-                                <!--PageComponentStart-->
-                                <div class="mb-3 row row justify-content-start g-0">
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('id') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['id'] ; ?>
+                            <div class="row gutter-lg ">
+                                <div class="col">
+                                    <div class="page-data">
+                                        <!--PageComponentStart-->
+                                        <div class="mb-3 row row justify-content-start g-0">
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('id') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['id'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('no') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['no'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('sekolahId') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['sekolah_id'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('namasekolah') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['namasekolah'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('paguOktober') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['pagu_oktober'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('inputSipd2024') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['input_sipd_2024'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('selisih') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['selisih'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('bosda9Bulan') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['bosda_9bulan'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('bosda12Bulan') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['bosda_12bulan'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('jmlGttptt') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['jml_gttptt'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('tunjangan') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['tunjangan'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('tunjanganTotal') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['tunjangan_total'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('paguAkhir') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['pagu_akhir'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('keterangan') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['keterangan'] ; ?>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('no') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['no'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('sekolahId') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['sekolah_id'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('namasekolah') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['namasekolah'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('paguOktober') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['pagu_oktober'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('inputSipd2024') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['input_sipd_2024'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('selisih') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['selisih'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('bosda9Bulan') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['bosda_9bulan'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('bosda12Bulan') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['bosda_12bulan'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('jmlGttptt') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['jml_gttptt'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('tunjangan') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['tunjangan'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('tunjanganTotal') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['tunjangan_total'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('paguAkhir') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['pagu_akhir'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('keterangan') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['keterangan'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <!--PageComponentEnd-->
+                                        <div class="d-flex align-items-center gap-2">
                                         </div>
                                     </div>
                                 </div>
-                                <!--PageComponentEnd-->
-                                <div class="d-flex align-items-center gap-2">
-                                    <?php if($can_edit){ ?>
-                                    <a class="btn btn-sm btn-success has-tooltip "   title="{{ __('edit') }}" href="<?php print_link("skemapagusd/edit/$rec_id"); ?>" >
-                                    <i class="fa fa-edit"></i> {{ __('edit') }}
-                                </a>
+                                <!-- Detail Page Column -->
+                                <?php if(!request()->has('subpage')){ ?>
+                                <div class="col-12">
+                                    <div class="my-3 p-1 ">
+                                        @include("pages.skemapagusd.detail-pages", ["masterRecordId" => $rec_id])
+                                    </div>
+                                </div>
                                 <?php } ?>
-                                <?php if($can_delete){ ?>
-                                <a class="btn btn-sm btn-danger has-tooltip record-delete-btn" data-prompt-msg="{{ __('promptDeleteRecord') }}" data-display-style="modal" title="{{ __('delete') }}" href="<?php print_link("skemapagusd/delete/$rec_id?redirect=skemapagusd"); ?>" >
-                                <i class="fa fa-times"></i> {{ __('delete') }}
-                            </a>
-                            <?php } ?>
+                            </div>
                         </div>
+                        <?php
+                            }
+                            else{
+                        ?>
+                        <!-- Empty Record Message -->
+                        <div class="text-muted p-3">
+                            <i class="fa fa-ban"></i> {{ __('noRecordFound') }}
+                        </div>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
-                <?php
-                    }
-                    else{
-                ?>
-                <!-- Empty Record Message -->
-                <div class="text-muted p-3">
-                    <i class="fa fa-ban"></i> {{ __('noRecordFound') }}
-                </div>
-                <?php
-                    }
-                ?>
             </div>
         </div>
     </div>
-</div>
-</div>
 </section>
 
 

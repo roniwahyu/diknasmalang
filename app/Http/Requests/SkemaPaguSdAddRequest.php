@@ -25,19 +25,6 @@ class SkemaPaguSdAddRequest extends FormRequest
 		
         return [
             
-				"no" => "nullable|string",
-				"sekolah_id" => "nullable|numeric",
-				"namasekolah" => "nullable|string",
-				"pagu_oktober" => "nullable|numeric",
-				"input_sipd_2024" => "nullable|numeric",
-				"selisih" => "nullable|numeric",
-				"bosda_9bulan" => "nullable|numeric",
-				"bosda_12bulan" => "nullable|numeric",
-				"jml_gttptt" => "nullable|numeric",
-				"tunjangan" => "nullable|numeric",
-				"tunjangan_total" => "nullable|numeric",
-				"pagu_akhir" => "nullable|numeric",
-				"keterangan" => "nullable|string",
             
         ];
     }

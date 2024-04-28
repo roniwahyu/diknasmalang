@@ -48,95 +48,107 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                             $rec_id = ($data['id'] ? urlencode($data['id']) : null);
                         ?>
                         <div id="page-main-content" class=" px-3 mb-3">
-                            <div class="page-data">
-                                <!--PageComponentStart-->
-                                <div class="mb-3 row row justify-content-start g-0">
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('id') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['id'] ; ?>
+                            <div class="row gutter-lg ">
+                                <div class="col">
+                                    <div class="page-data">
+                                        <!--PageComponentStart-->
+                                        <div class="mb-3 row row justify-content-start g-0">
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('id') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['id'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('name') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['name'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('description') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['description'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('modules') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['modules'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('dateCreated') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['date_created'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">{{ __('dateUpdated') }}</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['date_updated'] ; ?>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('name') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['name'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('description') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['description'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('modules') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['modules'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('dateCreated') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['date_created'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('dateUpdated') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['date_updated'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <!--PageComponentEnd-->
+                                        <div class="d-flex align-items-center gap-2">
+                                            <?php if($can_edit){ ?>
+                                            <a class="btn btn-sm btn-success has-tooltip "   title="{{ __('edit') }}" href="<?php print_link("groups/edit/$rec_id"); ?>" >
+                                            <i class="fa fa-edit"></i> {{ __('edit') }}
+                                        </a>
+                                        <?php } ?>
+                                        <?php if($can_delete){ ?>
+                                        <a class="btn btn-sm btn-danger has-tooltip record-delete-btn" data-prompt-msg="{{ __('promptDeleteRecord') }}" data-display-style="modal" title="{{ __('delete') }}" href="<?php print_link("groups/delete/$rec_id?redirect=groups"); ?>" >
+                                        <i class="fa fa-times"></i> {{ __('delete') }}
+                                    </a>
+                                    <?php } ?>
                                 </div>
-                                <!--PageComponentEnd-->
-                                <div class="d-flex align-items-center gap-2">
-                                    <?php if($can_edit){ ?>
-                                    <a class="btn btn-sm btn-success has-tooltip "   title="{{ __('edit') }}" href="<?php print_link("groups/edit/$rec_id"); ?>" >
-                                    <i class="fa fa-edit"></i> {{ __('edit') }}
-                                </a>
-                                <?php } ?>
-                                <?php if($can_delete){ ?>
-                                <a class="btn btn-sm btn-danger has-tooltip record-delete-btn" data-prompt-msg="{{ __('promptDeleteRecord') }}" data-display-style="modal" title="{{ __('delete') }}" href="<?php print_link("groups/delete/$rec_id?redirect=groups"); ?>" >
-                                <i class="fa fa-times"></i> {{ __('delete') }}
-                            </a>
-                            <?php } ?>
+                            </div>
                         </div>
+                        <!-- Detail Page Column -->
+                        <?php if(!request()->has('subpage')){ ?>
+                        <div class="col-12">
+                            <div class="my-3 p-1 ">
+                                @include("pages.groups.detail-pages", ["masterRecordId" => $rec_id])
+                            </div>
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <?php
