@@ -14,7 +14,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
     $total_records = $records->total();
     $limit = $records->perPage();
     $record_count = count($records);
-    $pageTitle = __('penganggaran2024'); //set dynamic page title
+    $pageTitle = __('penganggaranTahun2024'); //set dynamic page title
 ?>
 @extends($layout)
 @section('title', $pageTitle)
