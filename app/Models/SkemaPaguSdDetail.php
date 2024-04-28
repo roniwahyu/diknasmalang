@@ -63,7 +63,6 @@ class SkemaPaguSdDetail extends Model
 	public static function listFields(){
 		return [ 
 			"id",
-			"no",
 			"namasekolah",
 			"nama",
 			"jabatan",
@@ -81,7 +80,6 @@ class SkemaPaguSdDetail extends Model
 	public static function exportListFields(){
 		return [ 
 			"id",
-			"no",
 			"namasekolah",
 			"nama",
 			"jabatan",
@@ -99,7 +97,6 @@ class SkemaPaguSdDetail extends Model
 	public static function viewFields(){
 		return [ 
 			"id",
-			"no",
 			"namasekolah",
 			"nama",
 			"jabatan",
@@ -117,7 +114,6 @@ class SkemaPaguSdDetail extends Model
 	public static function exportViewFields(){
 		return [ 
 			"id",
-			"no",
 			"namasekolah",
 			"nama",
 			"jabatan",

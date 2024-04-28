@@ -19,13 +19,13 @@ class SkemaPaguSdController extends Controller
 	function index(Request $request, $fieldname = null , $fieldvalue = null){
 		$view = "pages.skemapagusd.list";
 		$query = SkemaPaguSd::query();
-		$limit = $request->limit ?? 10;
+		$limit = $request->limit ?? 25;
 		if($request->search){
 			$search = trim($request->search);
 			SkemaPaguSd::search($query, $search); // search table records
 		}
 		$orderby = $request->orderby ?? "skema_pagu_sd.id";
-		$ordertype = $request->ordertype ?? "asc"; //update sorting method
+		$ordertype = $request->ordertype ?? "desc";
 		$query->orderBy($orderby, $ordertype);
 		if($fieldname){
 			$query->where($fieldname , $fieldvalue); //filter by a table field

@@ -71,8 +71,6 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         <th class="td-id <?php echo (get_value('orderby') == 'id' ? 'sortedby' : null); ?>" >
                                         <?php Html :: get_field_order_link('id', __('id'), ''); ?>
                                         </th>
-                                        <th class="td-no" > {{ __('no') }}</th>
-                                        <th class="td-sekolah_id" > {{ __('sekolahId') }}</th>
                                         <th class="td-namasekolah" > {{ __('namasekolah') }}</th>
                                         <th class="td-pagu_oktober" > {{ __('paguOktober') }}</th>
                                         <th class="td-input_sipd_2024" > {{ __('inputSipd2024') }}</th>
@@ -102,12 +100,6 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         <!--PageComponentStart-->
                                         <td class="td-id">
                                             <a href="<?php print_link("/skemapagusd/view/$data[id]") ?>"><?php echo $data['id']; ?></a>
-                                        </td>
-                                        <td class="td-no">
-                                            <?php echo  $data['no'] ; ?>
-                                        </td>
-                                        <td class="td-sekolah_id">
-                                            <?php echo  $data['sekolah_id'] ; ?>
                                         </td>
                                         <td class="td-namasekolah">
                                             <?php echo  $data['namasekolah'] ; ?>
@@ -151,7 +143,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                 <ul class="dropdown-menu">
                                                     <?php if($can_view){ ?>
                                                     <a class="dropdown-item "   href="<?php print_link("skemapagusd/view/$rec_id"); ?>" >
-                                                    <i class="fa fa-eye"></i> {{ __('view') }}
+                                                    <i class="fa fa-eye "></i> {{ __('view') }}
                                                 </a>
                                                 <?php } ?>
                                             </ul>

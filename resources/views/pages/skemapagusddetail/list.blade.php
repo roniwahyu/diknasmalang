@@ -71,7 +71,6 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         <th class="td-id <?php echo (get_value('orderby') == 'id' ? 'sortedby' : null); ?>" >
                                         <?php Html :: get_field_order_link('id', __('id'), ''); ?>
                                         </th>
-                                        <th class="td-no" > {{ __('no') }}</th>
                                         <th class="td-namasekolah" > {{ __('namasekolah') }}</th>
                                         <th class="td-nama <?php echo (get_value('orderby') == 'nama' ? 'sortedby' : null); ?>" >
                                         <?php Html :: get_field_order_link('nama', __('nama'), ''); ?>
@@ -97,9 +96,6 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         <!--PageComponentStart-->
                                         <td class="td-id">
                                             <a href="<?php print_link("/skemapagusddetail/view/$data[id]") ?>"><?php echo $data['id']; ?></a>
-                                        </td>
-                                        <td class="td-no">
-                                            <?php echo  $data['no'] ; ?>
                                         </td>
                                         <td class="td-namasekolah">
                                             <?php echo  $data['namasekolah'] ; ?>

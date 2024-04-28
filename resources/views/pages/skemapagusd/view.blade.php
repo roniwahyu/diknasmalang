@@ -49,7 +49,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                         ?>
                         <div id="page-main-content" class=" px-3 mb-3">
                             <div class="row gutter-lg ">
-                                <div class="col">
+                                <div class="col-4">
                                     <div class="page-data">
                                         <!--PageComponentStart-->
                                         <div class="mb-3 row row justify-content-start g-0">
@@ -60,18 +60,6 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                             <small class="text-muted">{{ __('id') }}</small>
                                                             <div class="fw-bold">
                                                                 <?php echo  $data['id'] ; ?>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                                    <div class="row align-items-center">
-                                                        <div class="col">
-                                                            <small class="text-muted">{{ __('no') }}</small>
-                                                            <div class="fw-bold">
-                                                                <?php echo  $data['no'] ; ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -229,7 +217,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                 </div>
                                 <!-- Detail Page Column -->
                                 <?php if(!request()->has('subpage')){ ?>
-                                <div class="col-12">
+                                <div class="col-8">
                                     <div class="my-3 p-1 ">
                                         @include("pages.skemapagusd.detail-pages", ["masterRecordId" => $rec_id])
                                     </div>
