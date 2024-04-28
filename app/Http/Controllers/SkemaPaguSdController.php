@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use \PDF;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\SkemapagusdListExport;
+use App\Exports\SkemapagusdViewExport;
 use Exception;
 class SkemaPaguSdController extends Controller
 {
@@ -49,6 +50,10 @@ class SkemaPaguSdController extends Controller
      */
 	function view($rec_id = null){
 		$query = SkemaPaguSd::query();
+		// if request format is for export example:- product/view/344?export=pdf
+		if($this->getExportFormat()){
+			return $this->ExportView($query, $rec_id);
+		}
 		$record = $query->findOrFail($rec_id, SkemaPaguSd::viewFields());
 		return $this->renderView("pages.skemapagusd.view", ["data" => $record]);
 	}
@@ -88,6 +93,35 @@ class SkemaPaguSdController extends Controller
 		}
 		elseif($format == "excel"){
 			return Excel::download(new SkemapagusdListExport($query), "$filename.xlsx", \Maatwebsite\Excel\Excel::XLSX);
+		}
+	}
+	
+
+	/**
+     * Export single record to different format
+	 * supported format:- PDF, CSV, EXCEL, HTML
+	 * @param \Illuminate\Database\Eloquent\Model $record
+	 * @param string $rec_id
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     */
+	private function ExportView($query, $rec_id){
+		ob_end_clean();// clean any output to allow file download
+		$filename ="ViewSkemaPaguSdReport-" . date_now();
+		$format = $this->getExportFormat();
+		if($format == "print"){
+			$record = $query->findOrFail($rec_id, SkemaPaguSd::exportViewFields());
+			return view("reports.skemapagusd-view", ["record" => $record]);
+		}
+		elseif($format == "pdf"){
+			$record = $query->findOrFail($rec_id, SkemaPaguSd::exportViewFields());
+			$pdf = PDF::loadView("reports.skemapagusd-view", ["record" => $record]);
+			return $pdf->download("$filename.pdf");
+		}
+		elseif($format == "csv"){
+			return Excel::download(new SkemapagusdViewExport($query, $rec_id), "$filename.csv", \Maatwebsite\Excel\Excel::CSV);
+		}
+		elseif($format == "excel"){
+			return Excel::download(new SkemapagusdViewExport($query, $rec_id), "$filename.xlsx", \Maatwebsite\Excel\Excel::XLSX);
 		}
 	}
 }

@@ -14,7 +14,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
 @extends($layout)
 @section('title', $pageTitle)
 @section('content')
-<section class="page" data-page-type="view" data-page-url="{{ url()->full() }}">
+<section class="page ajax-page" data-page-type="view" data-page-url="{{ url()->full() }}">
     <?php
         if( $show_header == true ){
     ?>
@@ -49,8 +49,24 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                         ?>
                         <div id="page-main-content" class=" px-3 mb-3">
                             <div class="row gutter-lg ">
-                                <div class="col-4">
+                                <div class="col-md-12 col-lg-4">
+                                    <div class="ajax-page-load-indicator" style="display:none">
+                                        <div class="text-center d-flex justify-content-center load-indicator">
+                                            <span class="loader mr-3"></span>
+                                            <span class="fw-bold">{{ __('loading') }}</span>
+                                        </div>
+                                    </div>
                                     <div class="page-data">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="dropup export-btn-holder">
+                                                <button  class="btn  btn-sm btn-outline-primary dropdown-toggle" title="Export" type="button" data-bs-toggle="dropdown">
+                                                <i class="fa fa-save"></i> 
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <?php Html :: export_menus(['pdf', 'print']); ?>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <!--PageComponentStart-->
                                         <div class="mb-3 row row justify-content-start g-0">
                                             <div class="col-12">
@@ -212,12 +228,20 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         </div>
                                         <!--PageComponentEnd-->
                                         <div class="d-flex align-items-center gap-2">
+                                            <div class="dropup export-btn-holder">
+                                                <button  class="btn  btn-sm btn-outline-primary dropdown-toggle" title="Export" type="button" data-bs-toggle="dropdown">
+                                                <i class="fa fa-save"></i> 
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <?php Html :: export_menus(['pdf', 'print']); ?>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Detail Page Column -->
                                 <?php if(!request()->has('subpage')){ ?>
-                                <div class="col-8">
+                                <div class="col-md-12 col-lg-8">
                                     <div class="my-3 p-1 ">
                                         @include("pages.skemapagusd.detail-pages", ["masterRecordId" => $rec_id])
                                     </div>
