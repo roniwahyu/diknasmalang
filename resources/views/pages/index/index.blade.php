@@ -4,7 +4,7 @@
         -->
         @inject('comp_model', 'App\Models\ComponentsData')
         <?php 
-            $pageTitle = __('diknasmalangGithub'); // set page title
+            $pageTitle = __('perencanaanDinasPendidikanKotaMalang'); // set page title
         ?>
         @extends($layout)
         @section('title', $pageTitle)
