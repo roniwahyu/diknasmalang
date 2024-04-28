@@ -1,8 +1,8 @@
 {
-    "name": "diknasmalanggithub/diknasmalanggithub-app",
+    "name": "perencanaandinaspendidikankotamalang/perencanaandinaspendidikankotamalang-app",
     "type": "project",
-    "description": "diknasmalang-github",
-    "keywords": ["diknasmalanggithub"],
+    "description": "Perencanaan Dinas Pendidikan Kota Malang",
+    "keywords": ["perencanaandinaspendidikankotamalang"],
     "license": "Put your license",
     "require": {
         "php": "^8.1",
