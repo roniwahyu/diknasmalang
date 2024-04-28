@@ -41,8 +41,6 @@ class Users extends Authenticatable
 				email_login_hash LIKE ?  OR 
 				activation_selector LIKE ?  OR 
 				activation_code LIKE ?  OR 
-				forgotten_password_selector LIKE ?  OR 
-				forgotten_password_code LIKE ?  OR 
 				remember_selector LIKE ?  OR 
 				remember_code LIKE ?  OR 
 				first_name LIKE ?  OR 
@@ -54,7 +52,9 @@ class Users extends Authenticatable
 				nim LIKE ?  OR 
 				otp LIKE ?  OR 
 				otp_login_code LIKE ?  OR 
-				otp_backup_code LIKE ? 
+				otp_backup_code LIKE ?  OR 
+				forgotten_password_selector LIKE ?  OR 
+				forgotten_password_code LIKE ? 
 		)';
 		$search_params = [
 			"%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%"
