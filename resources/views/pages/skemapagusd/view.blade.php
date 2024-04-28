@@ -9,7 +9,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
     $can_edit = $user->canAccess("skemapagusd/edit");
     $can_view = $user->canAccess("skemapagusd/view");
     $can_delete = $user->canAccess("skemapagusd/delete");
-    $pageTitle = __('skemaPaguSdDetails'); //set dynamic page title
+    $pageTitle = __('skemaPaguSdDetail'); //set dynamic page title
 ?>
 @extends($layout)
 @section('title', $pageTitle)
@@ -49,7 +49,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                         ?>
                         <div id="page-main-content" class=" px-3 mb-3">
                             <div class="row gutter-lg ">
-                                <div class="col-md-12 col-lg-4">
+                                <div class="col-12">
                                     <div class="ajax-page-load-indicator" style="display:none">
                                         <div class="text-center d-flex justify-content-center load-indicator">
                                             <span class="loader mr-3"></span>
@@ -241,7 +241,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                 </div>
                                 <!-- Detail Page Column -->
                                 <?php if(!request()->has('subpage')){ ?>
-                                <div class="col-md-12 col-lg-8">
+                                <div class="col-12">
                                     <div class="my-3 p-1 ">
                                         @include("pages.skemapagusd.detail-pages", ["masterRecordId" => $rec_id])
                                     </div>
