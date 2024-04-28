@@ -4,6 +4,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SkemaPaguSdAddRequest;
 use App\Models\SkemaPaguSd;
 use Illuminate\Http\Request;
+use \PDF;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\SkemapagusdListExport;
 use Exception;
 class SkemaPaguSdController extends Controller
 {
@@ -30,6 +33,10 @@ class SkemaPaguSdController extends Controller
 		if($fieldname){
 			$query->where($fieldname , $fieldvalue); //filter by a table field
 		}
+		// if request format is for export example:- product/index?export=pdf
+		if($this->getExportFormat()){
+			return $this->ExportList($query); // export current query
+		}
 		$records = $query->paginate($limit, SkemaPaguSd::listFields());
 		return $this->renderView($view, compact("records"));
 	}
@@ -54,5 +61,33 @@ class SkemaPaguSdController extends Controller
      */
 	function masterDetail($rec_id = null){
 		return View("pages.skemapagusd.detail-pages", ["masterRecordId" => $rec_id]);
+	}
+	
+
+	/**
+     * Export table records to different format
+	 * supported format:- PDF, CSV, EXCEL, HTML
+	 * @param \Illuminate\Database\Eloquent\Model $query
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     */
+	private function ExportList($query){
+		ob_end_clean(); // clean any output to allow file download
+		$filename = "ListSkemaPaguSdReport-" . date_now();
+		$format = $this->getExportFormat();
+		if($format == "print"){
+			$records = $query->get(SkemaPaguSd::exportListFields());
+			return view("reports.skemapagusd-list", ["records" => $records]);
+		}
+		elseif($format == "pdf"){
+			$records = $query->get(SkemaPaguSd::exportListFields());
+			$pdf = PDF::loadView("reports.skemapagusd-list", ["records" => $records]);
+			return $pdf->download("$filename.pdf");
+		}
+		elseif($format == "csv"){
+			return Excel::download(new SkemapagusdListExport($query), "$filename.csv", \Maatwebsite\Excel\Excel::CSV);
+		}
+		elseif($format == "excel"){
+			return Excel::download(new SkemapagusdListExport($query), "$filename.xlsx", \Maatwebsite\Excel\Excel::XLSX);
+		}
 	}
 }

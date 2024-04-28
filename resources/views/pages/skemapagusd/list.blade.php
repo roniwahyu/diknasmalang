@@ -65,13 +65,30 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                             <div class="filter-tags mb-2">
                                 <?php Html::filter_tag('search', __('Search')); ?>
                             </div>
+                            <div class="col-md-auto d-flex">    
+                                <?php if($can_delete){ ?>
+                                <button data-prompt-msg="{{ __('promptDeleteRecords') }}" data-display-style="modal" data-url="<?php print_link("skemapagusd/delete/{sel_ids}"); ?>" class="btn btn-sm btn-danger btn-delete-selected d-none">
+                                <i class="fa fa-times"></i> {{ __('deleteSelected') }}
+                                </button>
+                                <?php } ?>
+                                <div class="dropup export-btn-holder">
+                                    <button  class="btn  btn-sm btn-outline-primary dropdown-toggle" title="Export" type="button" data-bs-toggle="dropdown">
+                                    <i class="fa fa-save"></i> 
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <?php Html :: export_menus(['pdf', 'print', 'excel', 'csv']); ?>
+                                    </div>
+                                </div>
+                            </div>
                             <table class="table table-hover table-striped table-sm text-left">
                                 <thead class="table-header ">
                                     <tr>
                                         <th class="td-id <?php echo (get_value('orderby') == 'id' ? 'sortedby' : null); ?>" >
                                         <?php Html :: get_field_order_link('id', __('id'), ''); ?>
                                         </th>
-                                        <th class="td-namasekolah" > {{ __('namasekolah') }}</th>
+                                        <th class="td-namasekolah <?php echo (get_value('orderby') == 'namasekolah' ? 'sortedby' : null); ?>" >
+                                        <?php Html :: get_field_order_link('namasekolah', __('namaSekolah'), ''); ?>
+                                        </th>
                                         <th class="td-pagu_oktober" > {{ __('paguOktober') }}</th>
                                         <th class="td-input_sipd_2024" > {{ __('inputSipd2024') }}</th>
                                         <th class="td-selisih" > {{ __('selisih') }}</th>
@@ -136,18 +153,11 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         </td>
                                         <!--PageComponentEnd-->
                                         <td class="td-btn">
-                                            <div class="dropdown" >
-                                                <button data-bs-toggle="dropdown" class="dropdown-toggle btn text-primary btn-flat btn-sm">
-                                                <i class="fa fa-bars"></i> 
-                                                </button>
-                                                <ul class="dropdown-menu">
-                                                    <?php if($can_view){ ?>
-                                                    <a class="dropdown-item "   href="<?php print_link("skemapagusd/view/$rec_id"); ?>" >
-                                                    <i class="fa fa-eye "></i> {{ __('view') }}
-                                                </a>
-                                                <?php } ?>
-                                            </ul>
-                                        </div>
+                                            <?php if($can_view){ ?>
+                                            <a class="btn btn-sm btn-primary has-tooltip "    href="<?php print_link("skemapagusd/view/$rec_id"); ?>" >
+                                            <i class="fa fa-eye "></i> {{ __('view') }}
+                                        </a>
+                                        <?php } ?>
                                     </td>
                                 </tr>
                                 <?php 
@@ -183,6 +193,14 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                 <i class="fa fa-times"></i> {{ __('deleteSelected') }}
                                 </button>
                                 <?php } ?>
+                                <div class="dropup export-btn-holder">
+                                    <button  class="btn  btn-sm btn-outline-primary dropdown-toggle" title="Export" type="button" data-bs-toggle="dropdown">
+                                    <i class="fa fa-save"></i> 
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <?php Html :: export_menus(['pdf', 'print', 'excel', 'csv']); ?>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col">   
                                 <?php
