@@ -3,7 +3,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UsersEditRequest extends FormRequest
+class UsersAccountEditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,12 +23,10 @@ class UsersEditRequest extends FormRequest
     public function rules()
     {
 		
-		$rec_id = request()->route('rec_id');
-
         return [
             
 				"ip_address" => "nullable|string",
-				"username" => "filled|string|unique:users,username,$rec_id,id",
+				"username" => "nullable|string",
 				"email_login_hash" => "nullable|email",
 				"activation_selector" => "nullable|string",
 				"activation_code" => "nullable|string",

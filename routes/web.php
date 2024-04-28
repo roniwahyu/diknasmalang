@@ -14,12 +14,41 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
+
+
+	Route::get('', 'IndexController@index')->name('index')->middleware(['redirect.to.home']);
+	Route::get('index/login', 'IndexController@login')->name('login');
 	
-	Route::get('', 'HomeController@index')->name('index');
+	Route::post('auth/login', 'AuthController@login')->name('auth.login');
+	Route::any('auth/logout', 'AuthController@logout')->name('logout')->middleware(['auth']);
+
+	Route::get('auth/accountcreated', 'AuthController@accountcreated')->name('accountcreated');
+	Route::get('auth/accountpending', 'AuthController@accountpending')->name('accountpending');
+	Route::get('auth/accountblocked', 'AuthController@accountblocked')->name('accountblocked');
+	Route::get('auth/accountinactive', 'AuthController@accountinactive')->name('accountinactive');
+
+
+	
+	Route::get('index/register', 'AuthController@register')->name('auth.register')->middleware(['redirect.to.home']);
+	Route::post('index/register', 'AuthController@register_store')->name('auth.register_store');
+		
+	Route::post('auth/login', 'AuthController@login')->name('auth.login');
+	Route::get('auth/password/forgotpassword', 'AuthController@showForgotPassword')->name('password.forgotpassword');
+	Route::post('auth/password/sendemail', 'AuthController@sendPasswordResetLink')->name('password.email');
+	Route::get('auth/password/reset', 'AuthController@showResetPassword')->name('password.reset.token');
+	Route::post('auth/password/resetpassword', 'AuthController@resetPassword')->name('password.resetpassword');
+	Route::get('auth/password/resetcompleted', 'AuthController@passwordResetCompleted')->name('password.resetcompleted');
+	Route::get('auth/password/linksent', 'AuthController@passwordResetLinkSent')->name('password.resetlinksent');
+	
+
+/**
+ * All routes which requires auth
+ */
+Route::middleware(['auth'])->group(function () {
+		
 	Route::get('home', 'HomeController@index')->name('home');
 
-
-
+	
 
 /* routes for Audits Controller */
 	Route::get('audits', 'AuditsController@index')->name('audits.index');
@@ -201,6 +230,9 @@ use Illuminate\Support\Facades\Mail;
 	Route::get('users/index/{filter?}/{filtervalue?}', 'UsersController@index')->name('users.index');	
 	Route::get('users/view/{rec_id}', 'UsersController@view')->name('users.view');
 	Route::get('users/masterdetail/{rec_id}', 'UsersController@masterDetail')->name('users.masterdetail');	
+	Route::any('account/edit', 'AccountController@edit')->name('account.edit');	
+	Route::get('account', 'AccountController@index');	
+	Route::post('account/changepassword', 'AccountController@changepassword')->name('account.changepassword');	
 	Route::get('users/add', 'UsersController@add')->name('users.add');
 	Route::post('users/add', 'UsersController@store')->name('users.store');
 		
@@ -226,28 +258,33 @@ use Illuminate\Support\Facades\Mail;
 		
 	Route::any('userspermissions/edit/{rec_id}', 'UsersPermissionsController@edit')->name('userspermissions.edit');	
 	Route::get('userspermissions/delete/{rec_id}', 'UsersPermissionsController@delete');
-
-/**
- * All routes which requires auth
- */
-Route::middleware(['auth'])->group(function () {
-	
-	
 });
 
 
+	
+Route::get('componentsdata/users_username_value_exist',  function(Request $request){
+		$compModel = new App\Models\ComponentsData();
+		return $compModel->users_username_value_exist($request);
+	}
+);
+	
+Route::get('componentsdata/users_email_value_exist',  function(Request $request){
+		$compModel = new App\Models\ComponentsData();
+		return $compModel->users_email_value_exist($request);
+	}
+);
 	
 Route::get('componentsdata/user_id_option_list',  function(Request $request){
 		$compModel = new App\Models\ComponentsData();
 		return $compModel->user_id_option_list($request);
 	}
-);
+)->middleware(['auth']);
 	
 Route::get('componentsdata/group_id_option_list',  function(Request $request){
 		$compModel = new App\Models\ComponentsData();
 		return $compModel->group_id_option_list($request);
 	}
-);
+)->middleware(['auth']);
 
 
 Route::post('fileuploader/upload/{fieldname}', 'FileUploaderController@upload');
