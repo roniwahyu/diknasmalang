@@ -4,6 +4,11 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
 -->
 @inject('comp_model', 'App\Models\ComponentsData')
 <?php
+    //check if current user role is allowed access to the pages
+    $can_add = $user->canAccess("users/add");
+    $can_edit = $user->canAccess("users/edit");
+    $can_view = $user->canAccess("users/view");
+    $can_delete = $user->canAccess("users/delete");
     $pageTitle = __('myAccount'); //set dynamic page title
 ?>
 @extends($layout)

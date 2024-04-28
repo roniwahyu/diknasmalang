@@ -44,7 +44,7 @@ use Illuminate\Support\Facades\Mail;
 /**
  * All routes which requires auth
  */
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'rbac'])->group(function () {
 		
 	Route::get('home', 'HomeController@index')->name('home');
 
@@ -84,7 +84,7 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('groups', 'GroupsController@index')->name('groups.index');
 	Route::get('groups/index/{filter?}/{filtervalue?}', 'GroupsController@index')->name('groups.index');	
 	Route::get('groups/view/{rec_id}', 'GroupsController@view')->name('groups.view');
-	Route::get('groups/masterdetail/{rec_id}', 'GroupsController@masterDetail')->name('groups.masterdetail');	
+	Route::get('groups/masterdetail/{rec_id}', 'GroupsController@masterDetail')->name('groups.masterdetail')->withoutMiddleware(['rbac']);	
 	Route::get('groups/add', 'GroupsController@add')->name('groups.add');
 	Route::post('groups/add', 'GroupsController@store')->name('groups.store');
 		
@@ -229,7 +229,7 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('users', 'UsersController@index')->name('users.index');
 	Route::get('users/index/{filter?}/{filtervalue?}', 'UsersController@index')->name('users.index');	
 	Route::get('users/view/{rec_id}', 'UsersController@view')->name('users.view');
-	Route::get('users/masterdetail/{rec_id}', 'UsersController@masterDetail')->name('users.masterdetail');	
+	Route::get('users/masterdetail/{rec_id}', 'UsersController@masterDetail')->name('users.masterdetail')->withoutMiddleware(['rbac']);	
 	Route::any('account/edit', 'AccountController@edit')->name('account.edit');	
 	Route::get('account', 'AccountController@index');	
 	Route::post('account/changepassword', 'AccountController@changepassword')->name('account.changepassword');	
@@ -273,6 +273,12 @@ Route::get('componentsdata/users_email_value_exist',  function(Request $request)
 		return $compModel->users_email_value_exist($request);
 	}
 );
+	
+Route::get('componentsdata/user_role_id_option_list',  function(Request $request){
+		$compModel = new App\Models\ComponentsData();
+		return $compModel->user_role_id_option_list($request);
+	}
+)->middleware(['auth']);
 	
 Route::get('componentsdata/user_id_option_list',  function(Request $request){
 		$compModel = new App\Models\ComponentsData();

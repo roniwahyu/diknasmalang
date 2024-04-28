@@ -43,6 +43,18 @@ class ComponentsData{
 	
 
 	/**
+     * user_role_id_option_list Model Action
+     * @return array
+     */
+	function user_role_id_option_list(){
+		$sqltext = "SELECT id AS value, name AS label FROM Role";
+		$query_params = [];
+		$arr = DB::select($sqltext, $query_params);
+		return $arr;
+	}
+	
+
+	/**
      * user_id_option_list Model Action
      * @return array
      */
