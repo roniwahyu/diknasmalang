@@ -76,8 +76,6 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         <?php Html :: get_field_order_link('nama', __('nama'), ''); ?>
                                         </th>
                                         <th class="td-jabatan" > {{ __('jabatan') }}</th>
-                                        <th class="td-keterangan" > {{ __('keterangan') }}</th>
-                                        <th class="td-sekolah_id" > {{ __('sekolahId') }}</th>
                                         <th class="td-btn"></th>
                                     </tr>
                                 </thead>
@@ -105,12 +103,6 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         </td>
                                         <td class="td-jabatan">
                                             <?php echo  $data['jabatan'] ; ?>
-                                        </td>
-                                        <td class="td-keterangan">
-                                            <?php echo  $data['keterangan'] ; ?>
-                                        </td>
-                                        <td class="td-sekolah_id">
-                                            <?php echo  $data['sekolah_id'] ; ?>
                                         </td>
                                         <!--PageComponentEnd-->
                                         <td class="td-btn">

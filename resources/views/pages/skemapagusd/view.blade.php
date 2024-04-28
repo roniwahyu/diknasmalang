@@ -85,18 +85,6 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                 <div class="bg-light mb-1 card-1 p-2 border rounded">
                                                     <div class="row align-items-center">
                                                         <div class="col">
-                                                            <small class="text-muted">{{ __('sekolahId') }}</small>
-                                                            <div class="fw-bold">
-                                                                <?php echo  $data['sekolah_id'] ; ?>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                                    <div class="row align-items-center">
-                                                        <div class="col">
                                                             <small class="text-muted">{{ __('namasekolah') }}</small>
                                                             <div class="fw-bold">
                                                                 <?php echo  $data['namasekolah'] ; ?>
@@ -111,7 +99,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                         <div class="col">
                                                             <small class="text-muted">{{ __('paguOktober') }}</small>
                                                             <div class="fw-bold">
-                                                                <?php echo  $data['pagu_oktober'] ; ?>
+                                                                <?php echo '<div class="text-end">'.approximate( $data['pagu_oktober'] , 2).'</div>'; ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -123,7 +111,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                         <div class="col">
                                                             <small class="text-muted">{{ __('inputSipd2024') }}</small>
                                                             <div class="fw-bold">
-                                                                <?php echo  $data['input_sipd_2024'] ; ?>
+                                                                <?php echo '<div class="text-end">'.approximate( $data['input_sipd_2024'] , 2).'</div>'; ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -135,7 +123,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                         <div class="col">
                                                             <small class="text-muted">{{ __('selisih') }}</small>
                                                             <div class="fw-bold">
-                                                                <?php echo  $data['selisih'] ; ?>
+                                                                <?php echo '<div class="text-end">'.approximate( $data['selisih'] , 2).'</div>'; ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -147,7 +135,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                         <div class="col">
                                                             <small class="text-muted">{{ __('bosda9Bulan') }}</small>
                                                             <div class="fw-bold">
-                                                                <?php echo  $data['bosda_9bulan'] ; ?>
+                                                                <?php echo '<div class="text-end">'.approximate( $data['bosda_9bulan'] , 2).'</div>'; ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -159,7 +147,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                         <div class="col">
                                                             <small class="text-muted">{{ __('bosda12Bulan') }}</small>
                                                             <div class="fw-bold">
-                                                                <?php echo  $data['bosda_12bulan'] ; ?>
+                                                                <?php echo '<div class="text-end">'.approximate( $data['bosda_12bulan'] , 2).'</div>'; ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -171,7 +159,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                         <div class="col">
                                                             <small class="text-muted">{{ __('jmlGttptt') }}</small>
                                                             <div class="fw-bold">
-                                                                <?php echo  $data['jml_gttptt'] ; ?>
+                                                                <?php echo '<div class="text-center">'.approximate( $data['jml_gttptt'] , 0).'</div>'; ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -183,7 +171,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                         <div class="col">
                                                             <small class="text-muted">{{ __('tunjangan') }}</small>
                                                             <div class="fw-bold">
-                                                                <?php echo  $data['tunjangan'] ; ?>
+                                                                <?php echo '<div class="text-end">'.approximate( $data['tunjangan'] , 2).'</div>'; ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -195,7 +183,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                         <div class="col">
                                                             <small class="text-muted">{{ __('tunjanganTotal') }}</small>
                                                             <div class="fw-bold">
-                                                                <?php echo  $data['tunjangan_total'] ; ?>
+                                                                <?php echo '<div class="text-end">'.approximate( $data['tunjangan_total'] , 2).'</div>'; ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -207,7 +195,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                         <div class="col">
                                                             <small class="text-muted">{{ __('paguAkhir') }}</small>
                                                             <div class="fw-bold">
-                                                                <?php echo  $data['pagu_akhir'] ; ?>
+                                                                <?php echo '<div class="text-end">'.approximate( $data['pagu_akhir'] , 2).'</div>'; ?>
                                                             </div>
                                                         </div>
                                                     </div>

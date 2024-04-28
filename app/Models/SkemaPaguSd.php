@@ -69,8 +69,7 @@ class SkemaPaguSd extends Model
 			"jml_gttptt",
 			"tunjangan",
 			"tunjangan_total",
-			"pagu_akhir",
-			"keterangan" 
+			"pagu_akhir" 
 		];
 	}
 	
@@ -92,8 +91,7 @@ class SkemaPaguSd extends Model
 			"jml_gttptt",
 			"tunjangan",
 			"tunjangan_total",
-			"pagu_akhir",
-			"keterangan" 
+			"pagu_akhir" 
 		];
 	}
 	
@@ -106,7 +104,6 @@ class SkemaPaguSd extends Model
 	public static function viewFields(){
 		return [ 
 			"id",
-			"sekolah_id",
 			"namasekolah",
 			"pagu_oktober",
 			"input_sipd_2024",
@@ -130,7 +127,6 @@ class SkemaPaguSd extends Model
 	public static function exportViewFields(){
 		return [ 
 			"id",
-			"sekolah_id",
 			"namasekolah",
 			"pagu_oktober",
 			"input_sipd_2024",

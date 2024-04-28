@@ -41,14 +41,13 @@ class SkemaPaguSdDetail extends Model
 	public static function search($query, $text){
 		//search table record 
 		$search_condition = '(
-				id LIKE ?  OR 
 				namasekolah LIKE ?  OR 
 				nama LIKE ?  OR 
 				jabatan LIKE ?  OR 
 				keterangan LIKE ? 
 		)';
 		$search_params = [
-			"%$text%","%$text%","%$text%","%$text%","%$text%"
+			"%$text%","%$text%","%$text%","%$text%"
 		];
 		//setting search conditions
 		$query->whereRaw($search_condition, $search_params);
@@ -65,9 +64,7 @@ class SkemaPaguSdDetail extends Model
 			"id",
 			"namasekolah",
 			"nama",
-			"jabatan",
-			"keterangan",
-			"sekolah_id" 
+			"jabatan" 
 		];
 	}
 	
@@ -82,9 +79,7 @@ class SkemaPaguSdDetail extends Model
 			"id",
 			"namasekolah",
 			"nama",
-			"jabatan",
-			"keterangan",
-			"sekolah_id" 
+			"jabatan" 
 		];
 	}
 	
