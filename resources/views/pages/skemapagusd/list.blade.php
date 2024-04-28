@@ -68,7 +68,9 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                             <table class="table table-hover table-striped table-sm text-left">
                                 <thead class="table-header ">
                                     <tr>
-                                        <th class="td-id" > {{ __('id') }}</th>
+                                        <th class="td-id <?php echo (get_value('orderby') == 'id' ? 'sortedby' : null); ?>" >
+                                        <?php Html :: get_field_order_link('id', __('id'), ''); ?>
+                                        </th>
                                         <th class="td-no" > {{ __('no') }}</th>
                                         <th class="td-sekolah_id" > {{ __('sekolahId') }}</th>
                                         <th class="td-namasekolah" > {{ __('namasekolah') }}</th>
