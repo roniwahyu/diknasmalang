@@ -29,7 +29,7 @@ class SkemaPaguSdController extends Controller
 			SkemaPaguSd::search($query, $search); // search table records
 		}
 		$orderby = $request->orderby ?? "skema_pagu_sd.id";
-		$ordertype = $request->ordertype ?? "desc";
+		$ordertype = $request->ordertype ?? "asc";
 		$query->orderBy($orderby, $ordertype);
 		if($fieldname){
 			$query->where($fieldname , $fieldvalue); //filter by a table field
