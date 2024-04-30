@@ -73,9 +73,7 @@ class Penganggaran2024 extends Model
 			"norek",
 			"sub",
 			"paguvalidasi",
-			"totalrincian",
-			"date_created",
-			"date_updated" 
+			"totalrincian" 
 		];
 	}
 	
@@ -96,9 +94,7 @@ class Penganggaran2024 extends Model
 			"norek",
 			"sub",
 			"paguvalidasi",
-			"totalrincian",
-			"date_created",
-			"date_updated" 
+			"totalrincian" 
 		];
 	}
 	
@@ -145,27 +141,6 @@ class Penganggaran2024 extends Model
 			"totalrincian",
 			"date_created",
 			"date_updated" 
-		];
-	}
-	
-
-	/**
-     * return edit page fields of the model.
-     * 
-     * @return array
-     */
-	public static function editFields(){
-		return [ 
-			"id",
-			"parentid",
-			"subkegiatanasli",
-			"statussubkegiatan",
-			"statusrincian",
-			"subkegiatan",
-			"norek",
-			"sub",
-			"paguvalidasi",
-			"totalrincian" 
 		];
 	}
 }

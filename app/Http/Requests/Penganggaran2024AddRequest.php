@@ -25,15 +25,6 @@ class Penganggaran2024AddRequest extends FormRequest
 		
         return [
             
-				"parentid" => "nullable|numeric",
-				"subkegiatanasli" => "nullable",
-				"statussubkegiatan" => "nullable|string",
-				"statusrincian" => "nullable|string",
-				"subkegiatan" => "nullable",
-				"norek" => "nullable|string",
-				"sub" => "nullable|string",
-				"paguvalidasi" => "nullable|numeric",
-				"totalrincian" => "nullable|numeric",
             
         ];
     }

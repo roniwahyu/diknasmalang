@@ -144,12 +144,7 @@ Route::middleware(['auth', 'rbac'])->group(function () {
 /* routes for Penganggaran2024 Controller */
 	Route::get('penganggaran2024', 'Penganggaran2024Controller@index')->name('penganggaran2024.index');
 	Route::get('penganggaran2024/index/{filter?}/{filtervalue?}', 'Penganggaran2024Controller@index')->name('penganggaran2024.index');	
-	Route::get('penganggaran2024/view/{rec_id}', 'Penganggaran2024Controller@view')->name('penganggaran2024.view');	
-	Route::get('penganggaran2024/add', 'Penganggaran2024Controller@add')->name('penganggaran2024.add');
-	Route::post('penganggaran2024/add', 'Penganggaran2024Controller@store')->name('penganggaran2024.store');
-		
-	Route::any('penganggaran2024/edit/{rec_id}', 'Penganggaran2024Controller@edit')->name('penganggaran2024.edit');	
-	Route::get('penganggaran2024/delete/{rec_id}', 'Penganggaran2024Controller@delete');
+	Route::get('penganggaran2024/view/{rec_id}', 'Penganggaran2024Controller@view')->name('penganggaran2024.view');
 
 /* routes for Permissions Controller */
 	Route::get('permissions', 'PermissionsController@index')->name('permissions.index');
