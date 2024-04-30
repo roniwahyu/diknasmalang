@@ -199,12 +199,7 @@ Route::middleware(['auth', 'rbac'])->group(function () {
 /* routes for SkemaPaguSmp Controller */
 	Route::get('skemapagusmp', 'SkemaPaguSmpController@index')->name('skemapagusmp.index');
 	Route::get('skemapagusmp/index/{filter?}/{filtervalue?}', 'SkemaPaguSmpController@index')->name('skemapagusmp.index');	
-	Route::get('skemapagusmp/view/{rec_id}', 'SkemaPaguSmpController@view')->name('skemapagusmp.view');	
-	Route::get('skemapagusmp/add', 'SkemaPaguSmpController@add')->name('skemapagusmp.add');
-	Route::post('skemapagusmp/add', 'SkemaPaguSmpController@store')->name('skemapagusmp.store');
-		
-	Route::any('skemapagusmp/edit/{rec_id}', 'SkemaPaguSmpController@edit')->name('skemapagusmp.edit');	
-	Route::get('skemapagusmp/delete/{rec_id}', 'SkemaPaguSmpController@delete');
+	Route::get('skemapagusmp/view/{rec_id}', 'SkemaPaguSmpController@view')->name('skemapagusmp.view');
 
 /* routes for SkemaPaguSmpDetail Controller */
 	Route::get('skemapagusmpdetail', 'SkemaPaguSmpDetailController@index')->name('skemapagusmpdetail.index');

@@ -43,11 +43,10 @@ class SkemaPaguSdDetail extends Model
 		$search_condition = '(
 				namasekolah LIKE ?  OR 
 				nama LIKE ?  OR 
-				jabatan LIKE ?  OR 
-				keterangan LIKE ? 
+				jabatan LIKE ? 
 		)';
 		$search_params = [
-			"%$text%","%$text%","%$text%","%$text%"
+			"%$text%","%$text%","%$text%"
 		];
 		//setting search conditions
 		$query->whereRaw($search_condition, $search_params);
@@ -62,6 +61,7 @@ class SkemaPaguSdDetail extends Model
 	public static function listFields(){
 		return [ 
 			"id",
+			"no",
 			"namasekolah",
 			"nama",
 			"jabatan" 
@@ -77,6 +77,7 @@ class SkemaPaguSdDetail extends Model
 	public static function exportListFields(){
 		return [ 
 			"id",
+			"no",
 			"namasekolah",
 			"nama",
 			"jabatan" 
@@ -92,11 +93,11 @@ class SkemaPaguSdDetail extends Model
 	public static function viewFields(){
 		return [ 
 			"id",
+			"sekolah_id",
 			"namasekolah",
 			"nama",
 			"jabatan",
-			"keterangan",
-			"sekolah_id" 
+			"keterangan" 
 		];
 	}
 	
@@ -109,11 +110,11 @@ class SkemaPaguSdDetail extends Model
 	public static function exportViewFields(){
 		return [ 
 			"id",
+			"sekolah_id",
 			"namasekolah",
 			"nama",
 			"jabatan",
-			"keterangan",
-			"sekolah_id" 
+			"keterangan" 
 		];
 	}
 }

@@ -67,6 +67,18 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         <div class="bg-light mb-1 card-1 p-2 border rounded">
                                             <div class="row align-items-center">
                                                 <div class="col">
+                                                    <small class="text-muted">{{ __('sekolahId') }}</small>
+                                                    <div class="fw-bold">
+                                                        <?php echo  $data['sekolah_id'] ; ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                            <div class="row align-items-center">
+                                                <div class="col">
                                                     <small class="text-muted">{{ __('namasekolah') }}</small>
                                                     <div class="fw-bold">
                                                         <?php echo  $data['namasekolah'] ; ?>
@@ -106,18 +118,6 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                     <small class="text-muted">{{ __('keterangan') }}</small>
                                                     <div class="fw-bold">
                                                         <?php echo  $data['keterangan'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">{{ __('sekolahId') }}</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['sekolah_id'] ; ?>
                                                     </div>
                                                 </div>
                                             </div>

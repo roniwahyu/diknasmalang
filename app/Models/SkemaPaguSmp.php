@@ -151,27 +151,4 @@ class SkemaPaguSmp extends Model
 			"date_updated" 
 		];
 	}
-	
-
-	/**
-     * return edit page fields of the model.
-     * 
-     * @return array
-     */
-	public static function editFields(){
-		return [ 
-			"id",
-			"namasekolah",
-			"pagu_oktober",
-			"input_sipd_2024",
-			"selisih",
-			"bosda_9bulan",
-			"bosda_12bulan",
-			"jml_gttptt",
-			"tunjangan",
-			"tunjangan_total",
-			"pagu_akhir",
-			"keterangan" 
-		];
-	}
 }
