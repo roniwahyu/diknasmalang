@@ -18,6 +18,8 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                         <div class="h5 font-weight-bold">{{ __('admin') }}</div>
                     </div>
                 </div>
+                <div class="col-md-4 comp-grid " >
+                </div>
             </div>
         </div>
     </div>
